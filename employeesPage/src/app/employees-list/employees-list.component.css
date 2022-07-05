@@ -1,0 +1,10 @@
+td{
+    vertical-align: middle;
+}
+th{
+    vertical-align: middle;
+}
+div[class="btn-group"]
+{
+    padding-left: 560px;
+}
