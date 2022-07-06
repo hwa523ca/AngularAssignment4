@@ -5,9 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterLink } from '@angular/router';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { SortbyidPipe } from './pipes/sortbyid.pipe';
+import { SortbynameaPipe } from './pipes/sortbynamea.pipe';
+import { SortbynamezPipe } from './pipes/sortbynamez.pipe';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents],
+  declarations: [AppComponent, routingComponents, SortbyidPipe, SortbynameaPipe, SortbynamezPipe],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]

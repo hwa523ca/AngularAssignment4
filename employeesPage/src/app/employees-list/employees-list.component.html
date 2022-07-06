@@ -24,8 +24,26 @@
                     <th scope="col">Employee Image</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr *ngFor="let employee of employees">
+            <tbody *ngIf="byID">
+                <tr *ngFor="let employee of (employees|sortbyid)">
+                    <td>{{employee.empID}}</td>
+                    <td>{{employee.empName | titlecase}}</td>
+                    <td>{{employee.empSalary | currency:'USD':true}}</td>
+                    <td>{{employee.empDesignation}}</td>
+                    <td><img width="200px" height="200px" [src]='employee.empImg'/></td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="byNA">
+                <tr *ngFor="let employee of (employees|sortbynamea)">
+                    <td>{{employee.empID}}</td>
+                    <td>{{employee.empName | titlecase}}</td>
+                    <td>{{employee.empSalary | currency:'USD':true}}</td>
+                    <td>{{employee.empDesignation}}</td>
+                    <td><img width="200px" height="200px" [src]='employee.empImg'/></td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="byNZ">
+                <tr *ngFor="let employee of (employees|sortbynamez)">
                     <td>{{employee.empID}}</td>
                     <td>{{employee.empName | titlecase}}</td>
                     <td>{{employee.empSalary | currency:'USD':true}}</td>
