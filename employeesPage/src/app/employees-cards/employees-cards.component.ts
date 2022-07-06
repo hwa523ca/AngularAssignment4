@@ -7,13 +7,16 @@ import { EmployeeService } from '../services/employee.service';
   styleUrls: ['./employees-cards.component.css']
 })
 export class EmployeesCardsComponent {
-  employees:any = []
+  employees:any = [];
+  errorMsg:string = '';
   byID:boolean = true;
   byNA:boolean = false;
   byNZ:boolean = false;
 
   constructor(empService:EmployeeService){
-    this.employees = empService.getEmployeesInfo();
+    // this.employees = empService.getEmployeesInfo();
+    empService.getEmployeesInfo().subscribe(res => this.employees=res,
+      error => this.errorMsg=error)
   }
 
   sortID()
